@@ -1,65 +1,37 @@
-import java.util.ArrayList;
-
-
-public class Damage {
+public class Damage {	 
+	  
 	
-	public static ArrayList<String> getweapons(String dirName){
-		ArrayList<String> weaponlist = new ArrayList<String>();
-		for (int i = 0; i < Check.filelist(Check.finder(dirName)).size(); i++){
-			String[] parts = Check.filelist(Check.finder(dirName)).get(i).split("/");
-			weaponlist.add(parts[parts.length-1].replace(".txt", ""));			
-		}
-		return weaponlist;
-	}
-	 public static boolean includesweapon(String command){
-		 int n=0;
-		 String[] parts = command.split(" ");
-		 for(String elem : parts){
-			 if (getweapons("C:/Users/Nick/Documents/GitHub/tbfg/src").contains(elem)== true){
-				 n++;
-			 } 
-		 }
-		 if(n==1){
-			 return true;
-		 }
-		 else{
-			 return false;
-		 }
-	 }
-	 public static String whichweapon(String command){
-		 String[] parts = command.split(" ");
-		 String weapon = "";
-		 for(String elem : parts){
-			 if (getweapons("C:/Users/Nick/Documents/GitHub/tbfg/src").contains(elem)== true){
-				 weapon = elem;}
-			 } 
-		 return weapon;
-	 }
-	 
-	
-	
-	static double damage(String command) throws Exception{
-		double dmg =0;
-		if(includesweapon(command) == true ){
-			
-			String commandminusweapon = command.replace(whichweapon(command),"");
-			if(includesweapon(command) == true ){
-				if(whichweapon(command).equals("sword")){
+	// Calculates damage value given with command
+	static double damagegiven(String command) throws Exception{
+		double dmg = 0;
+		
+			// Damage depends on the weapon
+					
+				if(Check.whichweapon(command).equals("sword")){
 					//System.out.println(Math.random()*(1)+4);
 					dmg+= Math.round(Math.random()*(1)+4);
 				}
+				if(Check.whichweapon(command).equals("bow")){
+					//System.out.println(Math.random()*(1)+4);
+					dmg+= Math.round(Math.random()*(1)+3);
+									}
+				if(Check.whichweapon(command).equals("knife")){
+					//System.out.println(Math.random()*(1)+4);
+					dmg+= Math.round(Math.random()*(1)+2);
+									}
+				
 								
-			}
+			String commandminusweapon = command.replace(Check.whichweapon(command),"");
 			String[] parts = commandminusweapon.split(" ");
-			
+			// other words in command have less value than weapons
 			for(String elem : parts){
-				dmg += elem.length();
+				dmg += elem.length()/2.5;
 				
 				
-			}
+			
 			
 		}
-		return dmg;
+		return Math.rint(dmg*100)/100;
 	}
 	
 
@@ -69,7 +41,7 @@ public class Damage {
 		//System.out.println(includesweapon("kick with sword"));
 		//System.out.println(whichweapon("kick with sword"));
 		
-		System.out.println(damage("kick with sword"));
+		System.out.println(damagegiven("kick with sword"));
 
 	}
 
