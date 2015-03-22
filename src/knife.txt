@@ -1,0 +1,4 @@
+stab
+hit
+cut
+slaughter
