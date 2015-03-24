@@ -168,7 +168,7 @@ public class Check {
 		 
 	public static void main(String[] args) throws Exception {
 		
-		    System.out.println(commandCheck("hit blow kick"));
+		    System.out.println(commandCheck("hit with a sword"));
 		    System.out.println(commandCheck("kick with sword"));
 		    
 	}
