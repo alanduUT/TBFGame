@@ -41,7 +41,11 @@ public class TBFGPlayer extends Thread {
 	public void thisPlayerDamage(String spell) {
 		output.println("MESSAGE You did damage: " + TBFGGame.damage(spell));
 		this.opponent.output.println("MESSAGE Opponent used:" +"\"" + spell + "\"" + "; Damage: " + TBFGGame.damage(spell));
-		this.opponent.output.println("DAMAGE " + (this.opponent.health));
+		if (this.opponent.health < 0) {
+			this.opponent.output.println("DAMAGE " + "0");
+		} else {
+			this.opponent.output.println("DAMAGE " + (this.opponent.health));
+		}
 		
 	}
 	

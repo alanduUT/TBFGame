@@ -29,9 +29,12 @@ public class TBFGGame {
 	
 	//Damage of spell
 	public static double damage(String spell) {
-		/*if (spell.equals("hit")) {
-			return 20D;
-		}*/
-		return 20D;
+		try {
+			return Damage.damagegiven(spell);
+		} catch (Exception e) {
+			
+		}
+		
+		return 0D;
 	}
 }

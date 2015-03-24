@@ -41,7 +41,7 @@ public class Damage {
 		//System.out.println(includesweapon("kick with sword"));
 		//System.out.println(whichweapon("kick with sword"));
 		
-		System.out.println(damagegiven("kick with sword"));
+		//System.out.println(damagegiven("kick with sword"));
 
 	}
 

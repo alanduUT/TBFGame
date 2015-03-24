@@ -111,7 +111,6 @@ public class TBFGClient {
 					healthLabel.setText("Health: " + healthToShow + "/100");
 				} else if (response.startsWith("DOWN")) {
 					messageArea.append(response.substring(5) + "\n");
-					break;
 				} else if (response.startsWith("WRONG")) {
 					messageArea.append(response.substring(6) + "\n");
 				}
@@ -131,24 +130,20 @@ public class TBFGClient {
 	//Here everything happens
 	public static void main(String[] args) throws Exception {
 		//Connection to ServerSocket
-		while (true) {
-			String serverAddress = "127.0.0.1";
-			TBFGClient client = new TBFGClient(serverAddress);
-			//GUI 
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setSize(700,300);
-			frame.setVisible(true);
-			frame.setResizable(false);
+		
+		String serverAddress = "127.0.0.1";
+		TBFGClient client = new TBFGClient(serverAddress);
+		//GUI 
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(700,300);
+		frame.setVisible(true);
+		frame.setResizable(false);
 			//
-			client.play();
-			if (!client.wantsRematch()) {
-				break;
-			}
-			
-			client.socket.close();
-			frame.setVisible(false);
-			frame.dispose();
-		}
+		client.play();
+		client.socket.close();
+		frame.setVisible(false);
+		frame.dispose();
+		
 	}
 }
 		

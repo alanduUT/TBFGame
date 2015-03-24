@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class Check {
 	
 	//Universal directory
-	public static String dirName = "C:/Users/Nick/Documents/GitHub/tbfg/src";
+	//public static String dirName = "C:/Users/Nick/Documents/GitHub/tbfg/src";
+	public static String dirName = "C:/Users/alandocs/Documents/JavaWorkspace/TBFG/src";
 	
 	//Searches and Filtres the directory (.txt)
     public static File[] finder(String dirName){
