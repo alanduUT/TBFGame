@@ -1,6 +1,0 @@
-kick
-smash
-punch
-blow
-hit
-strike

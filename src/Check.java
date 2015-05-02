@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class Check {
 	
 	//Universal directory
-	//public static String dirName = "C:/Users/Nick/Documents/GitHub/tbfg/src";
-	public static String dirName = "C:/Users/alandocs/Documents/JavaWorkspace/TBFG/src";
+	//public static String dirName = "C:/Users/Nick/Documents/GitHub/tbfg/Weapons";
+	public static String dirName = "C:/Users/alandocs/Documents/JavaWorkspace/TBFG/Weapons";
 	
 	//Searches and Filtres the directory (.txt)
     public static File[] finder(String dirName){
@@ -124,7 +124,7 @@ public class Check {
     	int n = 0;
     	
     	   	
-    	if(includesweapon(command) == true && includeskey(command)== true){
+    	if(includesweapon(command) == true && includeskey(command) == true){
     		
     		File fail = new File(dirName + "/" + whichweapon(command) + ".txt");    		
     		Scanner sc = new Scanner(fail);

@@ -1,0 +1,9 @@
+kick
+smash
+punch
+blow
+hit
+strike
+super
+deep
+penetration
